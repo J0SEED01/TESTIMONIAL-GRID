@@ -1,0 +1,150 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+  
+body{
+    background-color: hsl(210, 46%, 95%);
+    color: white;
+    font-size: 13px;
+    min-height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1, 20% 20% 20% 20%);
+    grid-template-rows: repeat(2,auto);
+    justify-content: center;
+    align-content: center;
+    grid-template-areas: 
+        "card--1 card--1 card--2 card--3"
+        "card--4 card--5 card--5 card--3";
+    gap: 30px;
+}
+
+
+.card{
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.card--1{
+    grid-area: card--1;
+    background-color: hsl(263, 55%, 52%);
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: 85% 0;
+    background-size: 25%;
+}
+
+.card--2{
+    grid-area: card--2;
+    background-color: hsl(217, 19%, 35%);
+}
+
+.card--3{
+    grid-area: card--3;
+    background-color: hsl(0, 0%, 100%);
+}
+
+.card--4{
+    grid-area: card--4;
+    background-color: hsl(0, 0%, 100%);   
+}
+
+.card--5{
+    grid-area: card--5;
+    background-color: hsl(219, 29%, 14%);
+  
+}
+
+.card__data{
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.card__data img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.card__name{
+    margin-left: 15px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.card__name .name__people{
+    margin-bottom: 3px;
+}
+
+.card__name .name__graduate{
+    opacity: 50%;
+}
+
+
+.card__title {
+    margin-bottom: 15px;
+}
+
+.card__paragraph{
+    color: hsl(0, 0%, 81%);
+    margin-bottom: 20px;
+}
+
+.card:nth-child(3) .card__data .card__name .name__graduate,
+.card:nth-child(4) .card__data .card__name .name__graduate,
+.card:nth-child(3) .card__paragraph,
+.card:nth-child(4) .card__paragraph{
+    color: black;
+    opacity: 50%;
+}
+
+.card:nth-child(3) .card__data,
+.card:nth-child(4) .card__data{
+    color: black;
+}
+
+
+.card:nth-child(3) .card__title,
+.card:nth-child(4) .card__title{
+    color: black;
+    opacity: 70%;
+}
+
+@media only screen and (max-width: 1000px){
+   
+    body{
+        padding-top: 5%;
+        padding-bottom: 5%;
+        grid-template-columns: repeat(1, 40% 40%);
+        grid-template-rows: repeat(3,auto);
+        grid-template-areas: 
+            "card--1 card--4"
+            "card--2 card--5"
+            "card--3 card--3";
+
+    }
+
+}
+
+@media only screen and (max-width: 650px){
+   
+    body{
+        grid-template-columns: repeat(1, 40% 40%);
+        grid-template-rows: repeat(5,auto);
+        grid-template-areas: 
+            "card--1 card--1"
+            "card--2 card--2"
+            "card--4 card--4"
+            "card--5 card--5"
+            "card--3 card--3";
+
+    }
+
+}
+
+
+
